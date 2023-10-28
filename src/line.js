@@ -3,7 +3,7 @@ const linegraph = ({ amountentries, timeentries }) => { //amount entries should 
     const canvasRef = useRef(null); //time entries is in format of seconds
     
     useEffect(() => {
-        const listlength = listentries.length;
+        const listlength = amountentries.length;
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
     
@@ -27,8 +27,8 @@ const linegraph = ({ amountentries, timeentries }) => { //amount entries should 
     
 
         totaltime = 0;
-        for (let i = 1; i < listlength; ++i) { //repeat 1 less times than amount of entries
-            totaltime += listentries[i-1];
+        for (let i = 1; i < amountentries; ++i) { //repeat 1 less times than amount of entries
+            totaltime += amountentries[i-1];
         context.lineTo(
             canvas.width * (totaltime/3600),
             canvas.height - (amountentries[i]*canvas.height)
