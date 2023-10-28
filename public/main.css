@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-size: 14px;
+  font-family: monospace;
+  font-weight: Regular;
+}
+.v8_494 {
+  width: 100%;
+  height: 2861px;
+  background: linear-gradient(rgb(20, 0, 40), rgba(21,0,80,1));
+  opacity: 1;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+}
+.background {
+  width: 214px;
+  height: 214px;
+  background: url("../images/v8_495.png");
+  opacity: 1;
+  position: absolute;
+  top: 248px;
+  left: 98px;
+  border: 12px solid rgba(255,255,255,1);
+}
+.v8_496 {
+  width: 126px;
+  height: 38px;
+  background: url("../images/v8_496.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  position: absolute;
+  top: 47px;
+  left: 98px;
+  border: 1px solid rgba(255,255,255,1);
+  overflow: hidden;
+}
+.logo {
+  width: 103px;
+  color: rgba(255,255,255,1);
+  position: absolute;
+  top: 53px;
+  left: 115px;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+.content {
+  color: rgba(255,255,255,1);
+  position: absolute;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+#time-left {
+  width: 100%;
+  top: 236px;
+  left: 713px;
+}
+#gaming-limit {
+  width: 100%;
+  top: 482px;
+  left: 547px;
+} 
+.gaming-limit-input{
+  top: 482px;
+  left: 547px;
+}
+/* Style the form container */
+form {
+  max-width: 400px; /* Set a maximum width for the form */
+  margin: auto; /* Center the form on the page */
+  padding: 20px; /* Add some padding for space around the form elements */
+  text-align: center;
+}
+
+
+
+/* Style the text input */
+input[type="text"] {
+  width: 37.5%; /* Take up the full width of its container */
+  padding: 8px; /* Add padding for some space inside the input */
+  margin-bottom: 10px; /* Add space below the input */
+  border: 1px solid #ccc; /* Add a border for visual separation */
+  border-radius: 4px; /* Add rounded corners */
+  position: absolute;
+  top: 500px; /* Adjust as needed */
+  left: 555px; /* Adjust as needed */
+}
+
+/* Style the submit button */
+input[type="submit"] {
+  background-color: #007bff; /* Set a background color */
+  color: #fff; /* Set text color to white */
+  padding: 10px 175px; /* Add padding for some space inside the button */
+  border: none; /* Remove the default button border */
+  border-radius: 4px; /* Add rounded corners */
+  cursor: pointer; /* Add a pointer cursor on hover */
+  display: inline-block;
+}
+
+/* Style labels for form elements */
+label {
+  display: inline-block; /* Make labels block-level for better spacing */
+  margin-top: 440px;
+  margin-bottom: 5px; /* Add some space between labels and inputs */
+  margin-left: 600px;
+ /* margin-right: 600px; */
+  font-weight: bold; /* Make labels bold */
+  top: 500px; /* Adjust as needed */
+  left: 500px; /* Adjust as needed */
+}
+
+.menu {
+  color: rgba(255,255,255,1);
+  position: absolute;
+  font-size: 20px;
+  opacity: 1;
+  text-align: left;
+}
+#h-profile {
+  width: 81px;
+  top: 54px;
+  left: 965px;
+}
+#h-support {
+  width: 94px;
+  top: 54px;
+  left: 1082px;
+}
+#h-stats {
+  width: 62px;
+  top: 54px;
+  left: 867px;
+}
+.name {
+  color: #fff;
+}
+#emotional-stability {
+  width: 100%;
+  top: 698px;
+  left: 612px;
+}
+.es-line{
+  
+}
+#current-heart-rate {
+  width: 100%;
+  top: 1151px;
+  left: 400px;
+}
+#es-time {
+  width: 100%;
+  top: 986px;
+  left: 1080px;
+}
+#positivity {
+  width: 86px;
+  top: 724px;
+  left: 336px;
+}
+#chr-bpm {
+  width: 44px;
+  top: 1361px;
+  left: 467px;
+}
+.subtitle{
+  color: rgba(255,255,255,1);
+  position: absolute;
+  font-size: 36px;
+  opacity: 1;
+  text-align: left;
+}
+#profile {
+  width: 146px;
+  top: 734px;
+  left: 85px;
+}
+#in-game-heart-rate {
+  width: 100%;
+  top: 1103px;
+  left: 818px;
+}
+#ighr-time {
+  width: 100%;
+  top: 1405px;
+  left: 1053px;
+}
+#ighr-bpm {
+  width: 44px;
+  top: 1143px;
+  left: 761px;
+}
+#average-fluctuation {
+  width: 100%;
+  top: 1521px;
+  left: 340px;
+}
+#meditation-description {
+  width: 950px;
+  top: 1918px;
+  left: 340px;
+}
+#try-breathing {
+  width: 100%;
+  top: 2219px;
+  left: 803px;
+}
+#start-time {
+  width: 100%;
+  top: 1573px;
+  left: 340px;
+}
+#end-time {
+  width: 100%;
+  top: 1625px;
+  left: 340px;
+}
+#average-time {
+  width: 100%;
+  top: 1677px;
+  left: 340px;
+}
+#average-heart-rate {
+  width: 100%;
+  top: 1729px;
+  left: 340px;
+}
+#stats {
+  width: 111px;
+  top: 1516px;
+  left: 85px;
+}
+#support {
+  width: 169px;
+  top: 1914px;
+  left: 85px;
+}
