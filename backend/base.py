@@ -26,7 +26,6 @@ ret, frame = camera.read()
 # Optionally encode the frame into a more readable format
 # ret, encoded = cv2.imencode(".jpg", frame)
 
-os.chdir(r'C:\Users\sandrew\Code\flaskHack\calhack2023\backend') 
 cv2.imwrite('image.jpg', frame)
 
 
