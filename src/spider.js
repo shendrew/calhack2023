@@ -20,7 +20,7 @@ import axios from "axios";
   export default getSix;*/
 
 
-const VariableHexagon = ({ radii }) => {
+const spider = ({ radii }) => {
 const canvasRef = useRef(null);
 
 useEffect(() => {
@@ -66,4 +66,4 @@ useEffect(() => {
 return <canvas ref={canvasRef} />;
 };
 
-export default VariableHexagon;
+export default spider;
