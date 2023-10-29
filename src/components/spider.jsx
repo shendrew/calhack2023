@@ -40,7 +40,7 @@ useEffect(() => {
         
         context.closePath();
         context.strokeStyle = 'gray';
-        context.lineWidth = (r===5)? 3 : 1;
+        context.lineWidth = (r===5)? 2 : 0.5;
         context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
         context.globalAlpha = 1;
         context.stroke();

@@ -19,7 +19,27 @@ const Linegraph = ({ amountentries, timeentries }) => { //amount entries should 
         // // Calculate the angle between each side
     
         context.clearRect(0, 0, canvas.width, canvas.height);
+
         context.beginPath();
+        for(let i=0; i<=400; i+=10){
+            context.moveTo(0,i)
+            context.lineTo(canvas.width,i)
+        }
+        for(let i=0; i<=400 ;i+=10){
+            context.moveTo(i, 0)
+            context.lineTo(i, canvas.height)
+        
+        }
+        context.strokeStyle = 'gray';
+        context.lineWidth = 0.5;
+        context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
+        context.globalAlpha = 1;
+        context.stroke();
+
+        context.beginPath();
+        context.moveTo(0,0)
+        context.lineTo(0,canvas.height)
+        context.lineTo(canvas.height,canvas.width)
         context.moveTo(
         0, //x = 0
         canvas.height - (amountentries[0]*canvas.height)
