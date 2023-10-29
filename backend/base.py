@@ -7,6 +7,7 @@ from hume import HumeStreamClient, StreamSocket
 from hume.models.config import FaceConfig, ProsodyConfig, BurstConfig
 import sounddevice as sd
 from scipy.io.wavfile import write
+import cv2
 import os
 from dotenv import load_dotenv
 
@@ -32,7 +33,6 @@ def data():
     }
 
     async def face():
-        import cv2
         camera = cv2.VideoCapture(0)
         ret, frame = camera.read()
         cv2.imwrite(img, frame)
@@ -73,6 +73,6 @@ def data():
 
     asyncio.run(face())
     asyncio.run(prosody())
-    asyncio.run(burst())
+    # asyncio.run(burst())
     return response_body
 

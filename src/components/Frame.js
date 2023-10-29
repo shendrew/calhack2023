@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-import Linegraph from "./line"
-import Spider from "./spider"
+// import Linegraph from "./line"
+// import Spider from "./spider"
 
 export default function Frame() {
-        // new line start
+
     const [emotions, setEmotions] = useState()
-    const [intervalTime, setIntervalTime] = useState(2000)
+    const [intervalTime, setIntervalTime] = useState(10000)
 
     // const weights = {
     //     'Admiration':1,
@@ -66,7 +66,9 @@ export default function Frame() {
             const res = response.data
             console.log(res)
             setEmotions({
-                emotions : res,
+                emotionsf : res.emotionsf,
+                emotionsp : res.emotionsp,
+                emotionsb : res.emotionsb,
             })
         }).catch((error) => {
             if (error.response) {
@@ -79,7 +81,7 @@ export default function Frame() {
     //end of new line 
 
     useEffect(() => {
-        const interval = setInterval({getData}, intervalTime)
+        const interval = setInterval(getData, intervalTime)
         return () => clearInterval(interval)
     }, []);
 
@@ -106,15 +108,6 @@ export default function Frame() {
                 <div>
                   <p>: {emotions.emotionsp[0].name}</p>
                   <p>: {emotions.emotionsp[0].score}</p>
-                </div>
-            }
-
-            {/* new line start*/}
-            <p>Burst data details: </p>
-            {emotions && emotions.emotionsb &&
-                <div>
-                  <p>: {emotions.emotionsb[0].name}</p>
-                  <p>: {emotions.emotionsb[0].score}</p>
                 </div>
             }
 
