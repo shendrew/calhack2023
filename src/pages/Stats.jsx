@@ -15,7 +15,7 @@ const Stats = () => {
   const randomAverageTime = getRandomInt(4, 12) + " HR"; // Generate a random average time between 4 and 12 hours
   // const randomHeartRate = getRandomInt(60, 200) + " BPM"; // Generate a random heart rate between 60 and 200 BPM
 
-  const radii = [0.1, 0.2, 0.3, 0.4, 0.5];
+  const radii = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6];
   const ab = [0.1, 0.5, 0.3, 0.7, 0.5, 0.2, 0.3];
   const ba = [600, 600, 600, 600, 600, 600];
 

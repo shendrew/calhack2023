@@ -41,7 +41,7 @@ const Linegraph = ({ amountentries, timeentries }) => { //amount entries should 
         // );
 
         context.strokeStyle = 'white';
-        context.lineWidth = 1;
+        context.lineWidth = 2;
         context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
         context.globalAlpha = 1;
         context.stroke();
