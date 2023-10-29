@@ -25,7 +25,7 @@ class Graph extends React.Component{
         return (
             <div>
                 <p>sdf</p>
-                <button onClick={this.getData}>test</button>
+                {/* <button onClick={this.getData}>test</button> */}
             </div>
         )
     }

@@ -45,25 +45,25 @@ class Profile extends React.Component {
         return (
         <>
         <form onSubmit={this.handleSubmit}>
-            <div className='form-control'>
-                <div className="label-input-container">
-                    <label>Set gaming time (hours): </label>
-                    <input
-                        type="number"
-                        value={this.state.hours}
-                        onChange={this.handleInputChange}
-                    />
-                    <br/>
-                    <br/>
-                </div>
-                <button
-                    className="setGamingTimeButton"
-                    type='button'
-                    onClick={this.handleButtonClick}
-                >
-                    Set
-                </button>
-            </div>
+        <div className='form-control'>
+  
+        <div className="label-input-container">
+            <label>Set gaming time (hours): </label>
+            <input
+            type="number"
+            value={this.state.hours}
+            onChange={this.handleInputChange}
+            />
+        </div>
+        <button
+            className="setGamingTimeButton"
+            type='button'
+            onClick={this.handleButtonClick}
+        >
+            Set
+        </button>
+        </div>
+
         </form>
 
         {countdown > 0 && (
