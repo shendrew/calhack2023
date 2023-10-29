@@ -45,35 +45,35 @@ class Profile extends React.Component {
         return (
         <>
         <form onSubmit={this.handleSubmit}>
-            <div className='form-control'>
-                <div className="label-input-container">
-                    <label>Set gaming time (hours): </label>
-                    <input
-                        type="number"
-                        value={this.state.hours}
-                        onChange={this.handleInputChange}
-                    />
-                    <br/>
-                    <br/>
-                </div>
-                <button
-                    className="setGamingTimeButton"
-                    type='button'
-                    onClick={this.handleButtonClick}
-                >
-                    Set
-                </button>
-            </div>
+        <div className='form-control'>
+  
+        <div className="label-input-container">
+            <label>Set gaming time (hours): </label>
+            <input
+            type="number"
+            value={this.state.hours}
+            onChange={this.handleInputChange}
+            />
+        </div>
+        <button
+            className="setGamingTimeButton"
+            type='button'
+            onClick={this.handleButtonClick}
+        >
+            Set
+        </button>
+        </div>
+
         </form>
 
         {countdown > 0 && (
             <div className="countdown-time">
                 <br></br>
                 <br></br>
-                <p>Time left to game: </p>
                 <br></br>
+                <p>Time left to game: </p>
                 <div className="countdown">
-                    <p>{Math.floor(countdown / 3600)} : {Math.floor((countdown % 3600) / 60)} : {countdown % 60}</p>
+                    {Math.floor(countdown / 3600)} : {Math.floor((countdown % 3600) / 60)} : {countdown % 60}
                 </div>
             </div>
         )}

@@ -9,22 +9,44 @@ display: flex;
 justify-content: space-between;
 padding: 20px;
 z-index: 30;
+margin-bottom: 85px;
 /* Third Nav */
 /* justify-content: flex-start; */
 `;
 
 export const NavLink = styled(Link)`
-color: #ffffff;
-display: flex;
-padding-left: 50px;
-padding-right: 55px;
-align-items: center;
-text-decoration: none;
-height: 100%;
-cursor: pointer;
-&.active {
-	color: #b4fac7;
-}
+color: #fff;
+  display: flex;
+  padding-left: 50px;
+  padding-right: 55px;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  cursor: pointer;
+  position: relative; /* Add position relative to create a stacking context */
+  
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 22px;
+    left: 33%; 
+    width: 0; /* Initial width */
+    height: 2px; /* Height of the line */
+    background-color: #ffffff; /* Color of the line */
+    transition: width 0.3s ease; /* Transition for width */
+  }
+
+  &:hover::after {
+    width: 60%; 
+    margin-left: -15%;
+	
+  }
+
+  &.active::after {
+    width: 60%;
+    margin-left: -15%;
+  }
 `;
 
 export const Bars = styled(FaBars)`

@@ -26,36 +26,37 @@ const Stats = () => {
       <div className="stat-item">
         <h4>Average Fluctuation</h4>
         <p>{randomFluctuation}%</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>Start Time</h4>
         <p>{randomStartTime}</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>End Time</h4>
         <p>{randomEndTime}</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>Average Time</h4>
         <p>{randomAverageTime}</p>
-        <br></br>
       </div>
-      <div className="stat-item">
-        <h4>Average Heart Rate</h4>
+      <div className="cur-heart-rate">
+        <p>Current Heart Rate</p>
         <NumberDisplay />
+        <div className="cur-bmp-text">
+          <p>BPM</p>
+        </div>
       </div>
-      <div className="stat-item">
+      <div className="cur-heart-rate-border"></div>
+      <div className="mood-map">
         <h4>Mood Map</h4>
         <Spider radii={radii} />
       </div>
-      <div className="stat-item">
+      <div className="line-graph">
         <h4>Line Graph</h4>
         <Linegraph amountentries ={ab} timeentries = {ba}/>
       </div>
     </div>
+
   );
 };
 
