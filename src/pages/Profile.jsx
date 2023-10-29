@@ -61,14 +61,20 @@ class Profile extends React.Component {
                     type='button'
                     onClick={this.handleButtonClick}
                 >
-                    Submit
+                    Set
                 </button>
             </div>
         </form>
 
         {countdown > 0 && (
-            <div className="countdown">
-                Time remaining: {Math.floor(countdown / 3600)} h : {Math.floor((countdown % 3600) / 60)} m : {countdown % 60} s
+            <div>
+                <br></br>
+                <br></br>
+                <p>Time left to game: </p>
+                <br></br>
+                <div className="countdown">
+                    <p>{Math.floor(countdown / 3600)} h : {Math.floor((countdown % 3600) / 60)} m : {countdown % 60} s</p>
+                </div>
             </div>
         )}
         </>

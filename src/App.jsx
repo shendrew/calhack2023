@@ -6,8 +6,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import Navbar from './components/navbar';
 import Profile from "./pages/Profile";
-// import Stats from "./pages/Stats";
-// import Support from "./pages/Support";
+import Stats from "./pages/Stats";
+import Support from "./pages/Support";
 
 function App() {
   return (
@@ -15,8 +15,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" exact element={<Profile/>} />
-        {/* <Route path="/stats" element={<Stats/>} />
-        <Route path="/support" element={<Support/>}/> */}
+        <Route path="/stats" element={<Stats/>} />
+        <Route path="/support" element={<Support/>}/>
       </Routes>
     </Router>
   );

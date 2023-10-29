@@ -9,7 +9,7 @@ body {
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  right: 0;
   width: 100%;
   background-color: transparent;
   color: #fff;
@@ -19,6 +19,7 @@ body {
   color: #fff;
   text-decoration: none;
   margin: 0 10px;
+  right: 0;
 }
 .content {
   text-align: center;
@@ -27,6 +28,7 @@ body {
 label {
   width: 350px;
   font-weight: bold;
+  color: #fff;
 }
 input[type="number"] {
   width: 100%;
@@ -38,6 +40,7 @@ input[type="number"] {
   background-color: transparent;
   outline: none; 
   border-radius: 0px;
+  color: #fff;
 }
 
 input[type="button"] {
@@ -87,10 +90,40 @@ label {
 
 
 .countdown {
-  font-size: 3em; /* Adjust the font size as needed */
+  font-size: 5em; 
   text-align: center;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+p {
+  color: #fff;
+  align-items: center;
+  text-align: center;
+  left: 50%;
+  width: 80%;
+  margin: 100px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+circle {
+  align-items: center;
+}
+
+.logo-img {
+  margin: 50px;
+}
+
+.stat-item {
+  color: #fff;
+  margin: 0;
+}
+.stat-item h4 {
+  left: 100px;
+}
+.stat-item p {
+  left: 300px;
 }

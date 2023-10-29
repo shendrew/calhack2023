@@ -15,7 +15,7 @@ return (
 	<Nav>
 		<Bars />
 		<NavMenu>
-			<img src={logo} alt="Logo" width="40px"/>
+			<img src={logo} alt="Logo" className="logo-img" width="40px"/>
             <NavLink to='/' activeStyle>
                 Profile
             </NavLink>
