@@ -1,61 +1,62 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios';
-// import Linegraph from "./line"
+import Linegraph from "./line"
 // import Spider from "./spider"
 
 export default function Frame() {
 
     const [emotions, setEmotions] = useState()
     const [intervalTime, setIntervalTime] = useState(10000)
+    const [lineData, setLineData] = useState([])
+    const [size, setSize] = useState([])
 
-    // const weights = {
-    //     'Admiration':1,
-    //     'Adoration':1,
-    //     "Aesthetic Appreciation":1,
-    //     "Amusement":1,
-    //     "Anger":-1,
-    //     "Anxiety":-1,
-    //     "Awe":1,
-    //     "Awkwardness":-1,
-    //     "Boredom":0,
-    //     "Calmness":0,
-    //     "Concentration":0,
-    //     "Confusion":0,
-    //     "Contemplation":0,
-    //     "Contentment":1,
-    //     "Craving":0,
-    //     "Desire":0,
-    //     "Determination":0,
-    //     "Disappointment":-1,
-    //     "Disgust":-1,
-    //     "Distress":-1,
-    //     "Doubt":-1,
-    //     "Embarrassment":-1,
-    //     "Empathic Pain":0,
-    //     "Entrancement":1,
-    //     "Envy":-1,
-    //     "Excitement":1,
-    //     "Fear":-1,
-    //     "Guilt":-1,
-    //     "Horror":-1,
-    //     "Interest":1,
-    //     "Joy":1,
-    //     "Love":1,
-    //     "Nostalgia":1,
-    //     "Pain":-1,
-    //     "Pride":1,
-    //     "Realization":1,
-    //     "Relief":1,
-    //     "Romance":1,
-    //     "Sadness":-1,
-    //     "Satisfaction":1,
-    //     "Shame":-1,
-    //     "Surprise (negative)":-1,
-    //     "Surprise (positive)":1,
-    //     "Sympathy":1,
-    //     "Tiredness":-1,
-    //     "Triumph":1,
-    // }
+    var weights = new Map();
+    weights.set('Admiration',1);
+    weights.set('Adoration',1);
+    weights.set('Aesthetic Appreciation',1);
+    weights.set("Amusement",1);
+    weights.set("Anger",-1);
+    weights.set("Anxiety",-1);
+    weights.set("Awe",1);
+    weights.set("Awkwardness",-1);
+    weights.set("Boredom",0);
+    weights.set("Calmness",0);
+    weights.set("Concentration",0);
+    weights.set("Confusion",0);
+    weights.set("Contemplation",0);
+    weights.set("Contentment",1);
+    weights.set("Craving",0);
+    weights.set("Desire",0);
+    weights.set("Determination",0);
+    weights.set("Disappointment",-1);
+    weights.set("Disgust",-1);
+    weights.set("Distress",-1);
+    weights.set("Doubt",-1);
+    weights.set("Embarrassment",-1);
+    weights.set("Empathic Pain",0);
+    weights.set("Entrancement",1);
+    weights.set("Envy",-1);
+    weights.set("Excitement",1);
+    weights.set("Fear",-1);
+    weights.set("Guilt",-1);
+    weights.set("Horror",-1);
+    weights.set("Interest",1);
+    weights.set("Joy",1);
+    weights.set("Love",1);
+    weights.set("Nostalgia",1);
+    weights.set("Pain",-1);
+    weights.set("Pride",1);
+    weights.set("Realization",1);
+    weights.set("Relief",1);
+    weights.set("Romance",1);
+    weights.set("Sadness",-1);
+    weights.set("Satisfaction",1);
+    weights.set("Shame",-1);
+    weights.set("Surprise (negative)",-1);
+    weights.set("Surprise (positive)",1);
+    weights.set("Sympathy",1);
+    weights.set("Tiredness",-1);
+    weights.set("Triumph",1);
 
     function getData() {
         axios({
@@ -64,12 +65,18 @@ export default function Frame() {
         })
         .then((response) => {
             const res = response.data
-            console.log(res)
             setEmotions({
                 emotionsf : res.emotionsf,
                 emotionsp : res.emotionsp,
-                emotionsb : res.emotionsb,
+                // emotionsb : res.emotionsb,
             })
+
+            const pt = weights[res.emotionsf.emotionsf[0].name]*res.emotionsf.emotionsf[0].score+
+                weights[res.emotionsp.emotionsp[0].name]*res.emotionsp.emotionsp[0].score
+            setLineData((p)=>[...lineData, pt])
+
+            
+            (lineData.size > 1 && setSize({size : [...size, 1]}));
         }).catch((error) => {
             if (error.response) {
                 console.log(error.response)
@@ -77,6 +84,7 @@ export default function Frame() {
                 console.log(error.response.headers)
             }
         })
+        console.log(lineData)
     }
     //end of new line 
 
@@ -110,8 +118,8 @@ export default function Frame() {
                   <p>: {emotions.emotionsp[0].score}</p>
                 </div>
             }
-
-            {/* <linegraph /> */}
+    
+            <Linegraph amountentries="lineData" timeentries="size"/>
         </div>
     );
 }
