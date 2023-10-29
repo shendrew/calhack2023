@@ -70,10 +70,10 @@ class Profile extends React.Component {
             <div className="countdown-time">
                 <br></br>
                 <br></br>
-                <p>Time left to game: </p>
                 <br></br>
+                <p>Time left to game: </p>
                 <div className="countdown">
-                    <p>{Math.floor(countdown / 3600)} : {Math.floor((countdown % 3600) / 60)} : {countdown % 60}</p>
+                    {Math.floor(countdown / 3600)} : {Math.floor((countdown % 3600) / 60)} : {countdown % 60}
                 </div>
             </div>
         )}

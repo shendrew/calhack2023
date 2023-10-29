@@ -26,22 +26,18 @@ const Stats = () => {
       <div className="stat-item">
         <h4>Average Fluctuation</h4>
         <p>{randomFluctuation}%</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>Start Time</h4>
         <p>{randomStartTime}</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>End Time</h4>
         <p>{randomEndTime}</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>Average Time</h4>
         <p>{randomAverageTime}</p>
-        <br></br>
       </div>
       <div className="stat-item">
         <h4>Average Heart Rate</h4>
@@ -56,6 +52,7 @@ const Stats = () => {
         <Linegraph amountentries ={ab} timeentries = {ba}/>
       </div>
     </div>
+
   );
 };
 
