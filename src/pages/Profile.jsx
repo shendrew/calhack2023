@@ -67,13 +67,13 @@ class Profile extends React.Component {
         </form>
 
         {countdown > 0 && (
-            <div>
+            <div className="countdown-time">
                 <br></br>
                 <br></br>
                 <p>Time left to game: </p>
                 <br></br>
                 <div className="countdown">
-                    <p>{Math.floor(countdown / 3600)} h : {Math.floor((countdown % 3600) / 60)} m : {countdown % 60} s</p>
+                    <p>{Math.floor(countdown / 3600)} : {Math.floor((countdown % 3600) / 60)} : {countdown % 60}</p>
                 </div>
             </div>
         )}

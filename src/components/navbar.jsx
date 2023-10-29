@@ -17,13 +17,13 @@ return (
 		<NavMenu>
 			<img src={logo} alt="Logo" className="logo-img" width="40px"/>
             <NavLink to='/' activeStyle>
-                Profile
+                PROFILE
             </NavLink>
             <NavLink to='/stats' activeStyle>
-                Stats
+                STATS
 			</NavLink>
 			<NavLink to='/support' activeStyles>
-				Support
+				SUPPORT
 			</NavLink>
 		</NavMenu>
 	</Nav>

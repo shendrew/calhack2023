@@ -1,5 +1,7 @@
 import React from 'react';
+import Spider from '../components/spider';
 import '../public/App.css';
+import Linegraph from '../components/line';
 
 const getRandomInt = (min, max) => {
   return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -11,6 +13,10 @@ const Stats = () => {
   const randomEndTime = getRandomInt(1, 12) + " AM"; // Generate a random end time between 1 and 12 AM
   const randomAverageTime = getRandomInt(4, 12) + " HR"; // Generate a random average time between 4 and 12 hours
   const randomHeartRate = getRandomInt(60, 200) + " BPM"; // Generate a random heart rate between 60 and 200 BPM
+
+  const radii = [0.1, 0.2, 0.3, 0.4, 0.5];
+  const ab = [0.1, 0.5, 0.3, 0.7, 0.5, 0.2, 0.3];
+  const ba = [600, 600, 600, 600, 600, 600];
 
   return (
     <div className="stats-container">
@@ -37,6 +43,14 @@ const Stats = () => {
       <div className="stat-item">
         <h4>Average Heart Rate</h4>
         <p>{randomHeartRate}</p>
+      </div>
+      <div className="stat-item">
+        <h4>Mood Map</h4>
+        <Spider radii={radii} />
+      </div>
+      <div className="stat-item">
+        <h4>Line Graph</h4>
+        <Linegraph amountentries ={ab} timeentries = {ba}/>
       </div>
     </div>
   );

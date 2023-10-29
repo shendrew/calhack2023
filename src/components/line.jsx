@@ -2,8 +2,8 @@ import { useEffect, useRef } from 'react'
 
 const Linegraph = ({ amountentries, timeentries }) => { //amount entries should be in the format float 0-1
     const canvasRef = useRef(null); //time entries is in format of seconds
-    
-    useEffect(() => {
+    console.log("yes");
+    const bruh = () => {
         const listlength = amountentries.length;
         const canvas = canvasRef.current;
         const context = canvas.getContext('2d');
@@ -28,21 +28,27 @@ const Linegraph = ({ amountentries, timeentries }) => { //amount entries should 
     
 
         var totaltime = 0;
-        for (let i = 1; i < amountentries; ++i) { //repeat 1 less times than amount of entries
-            totaltime += amountentries[i-1];
+        for (let i = 1; i < amountentries.length; ++i) { //repeat 1 less times than amount of entries
+            totaltime += timeentries[i-1];
+            console.log(totaltime)
         context.lineTo(
             canvas.width * (totaltime/3600),
             canvas.height - (amountentries[i]*canvas.height)
         );
         }
-    
-        context.closePath();
+        // context.lineTo(
+        //     300,
+        //     300
+        // );
+
         context.strokeStyle = 'white';
         context.lineWidth = 3;
         context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
         context.globalAlpha = 1;
         context.stroke();
-    }, [amountentries]);
+    };
+    useEffect(bruh, []);
+    useEffect(bruh, [amountentries]);
     
     return <canvas ref={canvasRef} />;
     };

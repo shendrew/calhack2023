@@ -30,8 +30,8 @@ useEffect(() => {
 
     for (let i = 1; i <= sides; i++) {
     context.lineTo(
-        centerX + radii[i % sides] * Math.cos(i * angle),
-        centerY + radii[i % sides] * Math.sin(i * angle)
+        centerX + canvas.width*radii[i % sides] * Math.cos(i * angle),
+        centerY + canvas.width*radii[i % sides] * Math.sin(i * angle)
     );
     }
 
