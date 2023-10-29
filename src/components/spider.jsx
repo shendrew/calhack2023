@@ -22,16 +22,62 @@ useEffect(() => {
     const angle = (2 * Math.PI) / sides;
 
     context.clearRect(0, 0, canvas.width, canvas.height);
+
+    for (let r = 1; r<=5; r++) {
+
+        context.beginPath();
+        context.moveTo(
+        centerX + canvas.width/2/5*r * Math.cos(0),
+        centerY + canvas.width/2/5*r * Math.sin(0)
+        );
+
+        for (let i = 1; i < 6; i++) {
+            context.lineTo(
+                centerX + canvas.width/2/5*r * Math.cos(i * angle),
+                centerY + canvas.width/2/5*r * Math.sin(i * angle)
+            );
+        }
+        
+        context.closePath();
+        context.strokeStyle = 'gray';
+        context.lineWidth = (r===5)? 3 : 1;
+        context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
+        context.globalAlpha = 1;
+        context.stroke();
+    }
+
+
+    context.moveTo(
+        centerX,
+        centerY
+    )
+    for (let i = 1; i<=sides; i++) {
+        context.lineTo(
+            centerX+canvas.width/2*Math.cos(i*angle),
+            centerY+canvas.width/2*Math.sin(i*angle)
+        )
+        context.moveTo(
+            centerX,
+            centerY
+        )
+    }
+    context.closePath();
+    context.strokeStyle = 'gray';
+    context.lineWidth = 1;
+    context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
+    context.globalAlpha = 1;
+    context.stroke();
+
     context.beginPath();
     context.moveTo(
-    centerX + radii[0] * Math.cos(0),
-    centerY + radii[0] * Math.sin(0)
+    centerX + canvas.width/1.5*radii[0] * Math.cos(0),
+    centerY + canvas.width/1.5*radii[0] * Math.sin(0)
     );
 
-    for (let i = 1; i <= sides; i++) {
+    for (let i = 1; i < 6; i++) {
     context.lineTo(
-        centerX + canvas.width*radii[i % sides] * Math.cos(i * angle),
-        centerY + canvas.width*radii[i % sides] * Math.sin(i * angle)
+        centerX + canvas.width/1.5*radii[i % sides] * Math.cos(i * angle),
+        centerY + canvas.width/1.5*radii[i % sides] * Math.sin(i * angle)
     );
     }
 
@@ -41,6 +87,7 @@ useEffect(() => {
     context.fillStyle = 'rgba(255, 0, 0, 0.1)'; // SWAP TO CSS VARIABLE
     context.globalAlpha = 1;
     context.stroke();
+
 }, [radii]);
 
 return <canvas ref={canvasRef} />;
