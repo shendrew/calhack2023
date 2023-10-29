@@ -39,10 +39,14 @@ const Stats = () => {
         <h4>Average Time</h4>
         <p>{randomAverageTime}</p>
       </div>
-      <div className="stat-item">
-        <h4>Average Heart Rate</h4>
+      <div className="cur-heart-rate">
+        <p>Current Heart Rate</p>
         <NumberDisplay />
+        <div className="cur-bmp-text">
+          <p>BPM</p>
+        </div>
       </div>
+      <div className="cur-heart-rate-border"></div>
       <div className="mood-map">
         <h4>Mood Map</h4>
         <Spider radii={radii} />
