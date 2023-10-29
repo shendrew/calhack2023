@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 api = Flask(__name__)
 
@@ -10,6 +10,18 @@ from scipy.io.wavfile import write
 import cv2
 import os
 from dotenv import load_dotenv
+from flask_cors import CORS
+
+print("test")
+cors = CORS(resources={
+    r'/*': {
+        'origins': [
+            "http://localhost:5173/"
+        ]
+    }
+})
+
+cors.init_app(api)
 
 load_dotenv()
 
@@ -72,7 +84,9 @@ def data():
 
 
     asyncio.run(face())
-    asyncio.run(prosody())
+    # asyncio.run(prosody())
     # asyncio.run(burst())
-    return response_body
+    # print("return:")
+    # print(response_body['emotionsf'][0])
+    return jsonify(response_body["emotionsf"][0])
 

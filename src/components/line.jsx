@@ -30,7 +30,6 @@ const Linegraph = ({ amountentries, timeentries }) => { //amount entries should 
         var totaltime = 0;
         for (let i = 1; i < amountentries.length; ++i) { //repeat 1 less times than amount of entries
             totaltime += timeentries[i-1];
-            console.log(totaltime)
         context.lineTo(
             canvas.width * (totaltime/3600),
             canvas.height - (amountentries[i]*canvas.height)

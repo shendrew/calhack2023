@@ -119,7 +119,7 @@ export default function Frame() {
                 </div>
             }
     
-            <Linegraph amountentries="lineData" timeentries="size"/>
+            <Linegraph amountentries="lineData"/>
         </div>
     );
 }

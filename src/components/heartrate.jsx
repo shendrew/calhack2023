@@ -16,7 +16,7 @@ function NumberDisplay() {
   }, []);
 
   function getRandomNumber() {
-    const randomValue = Math.floor(Math.random() * (90)) + 60;
+    const randomValue = Math.floor(Math.random() * (15)) + 100;
     if (randomValue > 150) {
       return "High heart rate, take a break";
     }
