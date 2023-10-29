@@ -15,11 +15,11 @@ def recording():
     sd.wait()
     write(recordpath, rate, testrecord)
 
-def encode_data(filepath: Path) -> str:
-    with Path(filepath).open('rb') as fp:
-        bytes_data = base64.b64encode(fp.read())
-        encoded_data = bytes_data.decode("utf-8")
-        return encoded_data
+# def encode_data(filepath: Path) -> str:
+#     with Path(filepath).open('rb') as fp:
+#         bytes_data = base64.b64encode(fp.read())
+#         encoded_data = bytes_data.decode("utf-8")
+#         return encoded_data
 
 filepath = r"D:\coding\calhacks\recordings"
 

@@ -1,26 +1,6 @@
-import { useState } from 'react';
-import axios from "axios";
-/*function getSix() {
-    const [data, setData] = useState([]);
-  
-    useEffect(() => {
-      // Make the Axios request to your API endpoint
-      axios.get('https://api.example.com/data') // Replace with your API endpoint
-        .then(response => {
-          // Assuming the response contains an array of 6 float variables
-          setData(response.data);
-        })
-        .catch(error => {
-          console.error('An error occurred:', error);
-        });
-    }, []); // The empty dependency array ensures the request is made once when the component mounts
-  
-    return setData;
+import { useEffect, useRef} from 'react'
 
-  export default getSix;*/
-
-
-const spider = ({ radii }) => {
+const Spider = ({ radii }) => {
 const canvasRef = useRef(null);
 
 useEffect(() => {
@@ -66,4 +46,4 @@ useEffect(() => {
 return <canvas ref={canvasRef} />;
 };
 
-export default spider;
+export default Spider;

@@ -1,5 +1,6 @@
-import { useState } from 'react';
-const linegraph = ({ amountentries, timeentries }) => { //amount entries should be in the format float 0-1
+import { useEffect, useRef } from 'react'
+
+const Linegraph = ({ amountentries, timeentries }) => { //amount entries should be in the format float 0-1
     const canvasRef = useRef(null); //time entries is in format of seconds
     
     useEffect(() => {
@@ -26,7 +27,7 @@ const linegraph = ({ amountentries, timeentries }) => { //amount entries should 
         );
     
 
-        totaltime = 0;
+        var totaltime = 0;
         for (let i = 1; i < amountentries; ++i) { //repeat 1 less times than amount of entries
             totaltime += amountentries[i-1];
         context.lineTo(
@@ -46,4 +47,4 @@ const linegraph = ({ amountentries, timeentries }) => { //amount entries should 
     return <canvas ref={canvasRef} />;
     };
     
-    export default linegraph;
+    export default Linegraph;
