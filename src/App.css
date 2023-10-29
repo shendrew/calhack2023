@@ -98,7 +98,7 @@ label {
   transform: translate(-50%, -50%);
 }
 
-p {
+.support-container p {
   color: #fff;
   align-items: center;
   text-align: center;
@@ -119,11 +119,6 @@ circle {
 
 .stat-item {
   color: #fff;
-  margin: 0;
-}
-.stat-item h4 {
-  left: 100px;
-}
-.stat-item p {
-  left: 300px;
+  margin-left: 70px;
+  align-items: center;
 }

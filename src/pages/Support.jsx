@@ -40,7 +40,7 @@ const Support = () => {
     }, [isIncreasing]);
   
     return (
-      <div>
+      <div className="support-container">
         <p>Meditation is beneficial for people with anger issues as it provides a structured practice to cultivate mindfulness and emotional regulation, leading to reduced impulsivity and a greater capacity to respond to triggers with calmness and clarity.</p>
         <p>Take a minute to breathe with us.</p>
         <svg height="1000" width="1000">
