@@ -47,11 +47,11 @@ const Stats = () => {
         <h4>Average Heart Rate</h4>
         <NumberDisplay />
       </div>
-      <div className="stat-item">
+      <div className="mood-map">
         <h4>Mood Map</h4>
         <Spider radii={radii} />
       </div>
-      <div className="stat-item">
+      <div className="line-graph">
         <h4>Line Graph</h4>
         <Linegraph amountentries ={ab} timeentries = {ba}/>
       </div>
